@@ -2,27 +2,28 @@ times = 0
 valid_count = 0
 total = 0
 
-print("\u6ce8\u610f\u529b\u5c0f\u6d4b\u8bd5\u5f00\u59cb\u5566\uff01\u51c6\u5907\u597d\u4e86\u5417\uff1f")
-print("\u63a5\u4e0b\u6765\u9700\u8981\u5f55\u51656\u6b21\u53cd\u5e94\u65f6\uff0c\u5355\u4f4d\u662f\u6beb\u79d2\u3002")
-print("\u6709\u6548\u8303\u56f4\uff1a100\uff5e1500\u6beb\u79d2")
+print("注意力小测试开始啦！准备好了吗？")
+print("接下来需要录入6次反应时，单位是毫秒。")
+print("有效范围：100～1500毫秒")
+print("------------------------")
 
 while times < 6:
-    reaction_time = float(input("\u8bf7\u8f93\u5165\u7b2c" + str(times + 1) + "\u6b21\u53cd\u5e94\u65f6\uff08\u6beb\u79d2\uff09\uff1a"))
+    reaction_time = float(input("请输入第" + str(times + 1) + "次反应时（毫秒）："))
     times += 1
 
     if reaction_time < 100 or reaction_time > 1500:
-        print("\u8fd9\u4e2a\u6570\u503c\u6709\u70b9\u8d85\u51fa\u8303\u56f4\u5566\uff0c\u672c\u6b21\u5148\u4e0d\u8ba1\u5165\u7edf\u8ba1\u54e6\uff01")
+        print("这个数值有点超出范围啦，本次先不计入统计哦！")
         continue
 
     valid_count += 1
     total += reaction_time
 
-print("\n\u516d\u6b21\u5f55\u5165\u7ed3\u675f\uff0c\u6765\u770b\u770b\u7ed3\u679c\uff5e")
-print("\u6709\u6548\u6570\u636e\u6570\u91cf\uff1a" + str(valid_count))
+print("\n六次录入结束，来看看结果～")
+print("有效数据数量：" + str(valid_count))
 
 if valid_count > 0:
     average = total / valid_count
-    print("\u6709\u6548\u53cd\u5e94\u65f6\u7684\u5e73\u5747\u503c\u662f\uff1a" + str(average) + "\u6beb\u79d2")
-    print("\u7edf\u8ba1\u5b8c\u6210\uff0c\u8f9b\u82e6\u5566\uff01")
+    print("有效反应时的平均值是：" + str(average) + "毫秒")
+    print("统计完成，辛苦啦！")
 else:
-    print("\u8fd9\u6b21\u6ca1\u6709\u6536\u96c6\u5230\u6709\u6548\u6570\u636e\uff0c\u4e0b\u6b21\u518d\u8bd5\u8bd5\u5427\uff01")
+    print("这次没有收集到有效数据，下次再试试吧！")
